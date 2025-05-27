@@ -1,0 +1,41 @@
+services:
+  accounts:
+    image: jaguzz98/accounts_service:V0.01
+    container_name: accounts_service
+    ports:
+      - 8080:8080
+      - 8081:8080
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - BankApplication
+  loans:
+    image: jaguzz98/loans:V1.01
+    container_name: loans_service
+    ports:
+      - 8090:8090
+      - 8091:8090
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - BankApplication
+  cards:
+    image: jaguzz98/cards:V1.01
+    container_name: cards_service
+    ports:
+      - 8100:8100
+      - 8101:8100
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - BankApplication
+
+networks:
+  BankApplication:
+    driver: "bridge"
