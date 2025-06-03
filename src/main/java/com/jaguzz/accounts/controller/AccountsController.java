@@ -3,6 +3,7 @@ package com.jaguzz.accounts.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jaguzz.accounts.constants.AccountsConstants;
+import com.jaguzz.accounts.dto.AccountsContactInfoDto;
 import com.jaguzz.accounts.dto.CustomerDto;
 import com.jaguzz.accounts.dto.ErrorResponseDto;
 import com.jaguzz.accounts.dto.ResponseDto;
@@ -18,6 +19,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +43,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AccountsController {
 
     private IAccountService iAccountService;
+
+    @Autowired
+    private AccountsContactInfoDto accountsContactInfoDto;
 
 
     @Operation(
@@ -168,6 +173,31 @@ public class AccountsController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_DELETE));
         }
+    }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
     }
 
 }
