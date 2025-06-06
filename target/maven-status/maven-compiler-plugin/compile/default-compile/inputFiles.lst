@@ -2,6 +2,7 @@ C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\account
 C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\audit\AuditAwareImpl.java
 C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\constants\AccountsConstants.java
 C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\controller\AccountsController.java
+C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\dto\AccountsContactInfoDto.java
 C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\dto\AccountsDto.java
 C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\dto\CustomerDto.java
 C:\springProjects\microservices\AccountsService\src\main\java\com\jaguzz\accounts\dto\ErrorResponseDto.java
