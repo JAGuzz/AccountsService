@@ -109,7 +109,7 @@
 				<version>3.4.5</version>
 				<configuration>
 					<to>
-						<image>jaguzz98/${project.artifactId}:V2.00</image>
+						<image>jaguzz98/${project.artifactId}:s6</image>
 					</to>
 				</configuration>
 			</plugin>
