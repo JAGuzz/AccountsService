@@ -29,6 +29,7 @@ public class CustomerDto {
     private String email;
     
     @Pattern(regexp ="(^$|[0-9]{10})", message = "Mobile number should be 10 digits")
+    @NotEmpty(message = "Mobile number can not be null or empty")
     @Schema(
             description = "Mobile Number of the customer", example = "9345432123"
     )
